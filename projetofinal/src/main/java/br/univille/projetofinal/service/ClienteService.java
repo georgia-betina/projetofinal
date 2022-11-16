@@ -1,4 +1,4 @@
-package br.univille.service;
+package br.univille.projetofinal.service;
 
 import java.util.List;
 
