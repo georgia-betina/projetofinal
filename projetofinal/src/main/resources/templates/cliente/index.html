@@ -27,10 +27,6 @@
                         <td th:if="${umCliente.dataCadastro}"
                             th:text="${#dates.format(umCliente.dataCadastro, 'dd/MM/yyyy')}"></td>
                         <td th:unless="${umCliente.dataCadastro}">Não informada</td>                        
-                        <td>
-                            <a th:href="@{'/clientes/alterar/' + ${umCliente.id}}" class="btn btn-warning">Alterar</a>
-                            <button class="btn btn-danger js-delete" th:data-id="${umCliente.id}">Excluir</button>
-                        </td>
                     </tr>
                 </tbody>
             </table>
