@@ -43,7 +43,4 @@ public class ClienteServiceImpl
     public List<Cliente> findByNome(String nome) {
         return repositorio.findByNomeIgnoreCaseContaining(nome);
     }
-    
-
-   
 }
