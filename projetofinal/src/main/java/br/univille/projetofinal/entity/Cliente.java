@@ -13,7 +13,7 @@ import javax.persistence.TemporalType;
 import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
-public class Cliente {
+    public class Cliente {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
@@ -69,6 +69,8 @@ public class Cliente {
     public void setDataCadastro(Date dataCadastro) {
         this.dataCadastro = dataCadastro;
     }
-
-
 }
+
+//organizar a edentação dos códigos sempre. A famosa buniteza.
+//dúvida com git e dúvida com entitys...
+//livro código limpo
