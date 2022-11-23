@@ -6,7 +6,8 @@ import java.util.HashMap;
  import org.springframework.beans.factory.annotation.Autowired;
  import org.springframework.stereotype.Controller;
  import org.springframework.web.bind.annotation.GetMapping;
- import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
  import org.springframework.web.servlet.ModelAndView;
 
  import br.univille.projetofinal.entity.Cliente;
@@ -29,6 +30,11 @@ public class ClienteController {
         HashMap<String,Object> dados = new HashMap<>();
         dados.put("cliente",cliente);
         return new ModelAndView("cliente/form", dados);
+    }
+    @PostMapping("/form")
+    public ModelAndView save(Cliente cliente){
+        
+        return null;
     }
 }
 
