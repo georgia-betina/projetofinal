@@ -7,5 +7,6 @@ import br.univille.projetofinal.entity.Fornecedor;
 public interface FornecedorService{
     List<Fornecedor> getAll();
     Fornecedor save(Fornecedor fornecedor);
-    Fornecedor findById(long id);        
+    Fornecedor findById(long id);   
+    void delete(long id);     
     }

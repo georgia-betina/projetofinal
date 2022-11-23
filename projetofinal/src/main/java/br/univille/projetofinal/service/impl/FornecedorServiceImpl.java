@@ -2,8 +2,6 @@ package br.univille.projetofinal.service.impl;
 
 import java.util.List;
 
-import javax.naming.spi.DirStateFactory.Result;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -36,6 +34,10 @@ implements FornecedorService{
             return resultado.get();
         }
         return new Fornecedor();
+    }
+    @Override
+    public void delete(long id){
+        repositorio.deleteById(id);
     }
 
 }
