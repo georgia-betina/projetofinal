@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,900;1,400&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital@1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
 body {
     margin: 0;
@@ -18,7 +19,9 @@ body {
 
 #title-cupom {
     font-weight: 900;
-    color: #c1121f;
+    background-image: linear-gradient(to right, #c1121f , red);
+    background-clip: text;
+    color: transparent;
 }
 
 #title-mania {
@@ -34,4 +37,6 @@ body {
 nav {
     background-color: #d3d3d3;
     list-style: none;
+    font-family: 'Roboto', sans-serif;
+    color: #161a1d;
 }
