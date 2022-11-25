@@ -56,5 +56,19 @@ nav > li {
     font-family: 'Roboto', sans-serif;
     color: whitesmoke;
     font-size: large;
-    padding-left: 2em;
+    padding: 1em 0em 1em 2em;
+    border-radius: 10px 10px 0px 0px;
+    background-image: linear-gradient(to right, #cc0c0c , #c1121f);
+    text-transform: uppercase;
+}
+
+.container {
+    background-color: #1a1a1a;
+    border-radius: 10px 10px 10px 10px;
+    margin: 2em;
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.25);
+}
+
+.new-item {
+    border: 1px solid #1a1a1a;
 }
