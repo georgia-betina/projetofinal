@@ -16,7 +16,9 @@ body {
 }
 
 #nav-login {
-    float: right;
+    display: inline-block;
+    margin-left: auto;
+    background-color: #F0A202;
 }
 
 #title {
@@ -113,6 +115,7 @@ nav > li {
     font-weight: normal;
     text-decoration: line-through;
     display: block;
+    color: rgba(245, 245, 245, 0.589);
 }
 
 .price-sign {
