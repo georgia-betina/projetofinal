@@ -12,6 +12,7 @@ import javax.persistence.ManyToOne;
     public class Produto{
         @Id
         @GeneratedValue (strategy = GenerationType.IDENTITY)
+        private  long id;
         private String nome;
         private float precoAtual;
         private int quantidae;
@@ -69,5 +70,11 @@ import javax.persistence.ManyToOne;
         }
         public void setFornecedor(Fornecedor fornecedor) {
             this.fornecedor = fornecedor;
+        }
+        public long getId() {
+            return id;
+        }
+        public void setId(long id) {
+            this.id = id;
         }
     }
