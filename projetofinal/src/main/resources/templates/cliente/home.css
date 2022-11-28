@@ -93,25 +93,88 @@ nav > li {
 
 .new-item > img {
     width: 10em;
+    padding-bottom: 2em;
 }
 
 .discount {
-    margin-bottom: 1em;
-    width: 4em;
+    margin-bottom: 0.5em;
+    width: 3.5em;
     height: 1em;
     background-image: linear-gradient(to right, #cc0c0c , red);
     padding: 0.5em;
     border-radius: 2px;
     color: whitesmoke;
     text-align: center;
+    margin-left: auto;
+}
+
+.price-outdated {
+    font-size: small;
+    font-weight: normal;
+    text-decoration: line-through;
+    display: block;
 }
 
 .price-sign {
     font-weight: 400;
+    color: #F18805;
 }
 
 .price-value {
-    color: #f11a1a;
+    color: #F18805;
     font-weight: 900;
     font-size: x-large;
+}
+
+.coupon-button {
+    padding: 1em;
+    /* color: #F0A202; */
+    color: rgba(245, 245, 245, 0.856);
+    text-transform: uppercase;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
+    border: 1px solid rgba(245, 245, 245, 0.37);
+    border-radius: 10px 10px 10px 10px;
+    display: block;
+    margin: auto;
+}
+
+button {
+    background: transparent;
+    border: 0;
+    outline:0;
+}
+
+.arrow {
+    cursor: pointer;
+}
+  
+.left {
+    left: 42%;
+}
+  
+.right {
+    left: 58%;
+}
+  
+.left:hover polyline, .left:focus polyline {
+    stroke-width: 3;
+}
+  
+.left:active polyline {
+    stroke-width: 6;
+    transition: all 100ms ease-in-out;
+}
+  
+.right:hover polyline, .right:focus polyline {
+    stroke-width: 3;
+}
+  
+.right:active polyline {
+    stroke-width: 6;
+    transition: all 100ms ease-in-out;
+}
+  
+polyline {
+    transition: all 250ms ease-in-out;
 }
