@@ -44,6 +44,10 @@ body {
     font-family: 'Roboto Condensed', sans-serif;
 }
 
+#descrip > em {
+    color: #F0A202;
+}
+
 nav {
     background-color: #4a4a4a;
     list-style: none;
