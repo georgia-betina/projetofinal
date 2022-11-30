@@ -15,7 +15,7 @@ import javax.persistence.ManyToOne;
         private  long id;
         private String nome;
         private float precoAtual;
-        private int quantidae;
+        private int quantidade;
         private float desconto;
         private String nomeCupom;
         private Date dataFim;
@@ -35,11 +35,11 @@ import javax.persistence.ManyToOne;
         public void setPrecoAtual(float precoAtual) {
             this.precoAtual = precoAtual;
         }
-        public int getQuantidae() {
-            return quantidae;
+        public int getQuantidade() {
+            return quantidade;
         }
-        public void setQuantidae(int quantidae) {
-            this.quantidae = quantidae;
+        public void setQuantidade(int quantidade) {
+            this.quantidade = quantidade;
         }
         public float getDesconto() {
             return desconto;
