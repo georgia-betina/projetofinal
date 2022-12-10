@@ -9,6 +9,7 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
 @Entity
+<<<<<<< HEAD
 public class Fornecedor {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -23,6 +24,51 @@ public class Fornecedor {
 
     public long getId() {
         return id;
+=======
+    public class Fornecedor {
+        @Id
+        @GeneratedValue(strategy = GenerationType.IDENTITY)
+        private long id;
+        @Column(length = 18, nullable = false)
+        private String CNPJ;
+        @Column(length = 150, nullable = false)
+        private String nomeFantasia;
+        @Column(length = 50, nullable = false)
+        private String login;
+        @Column(length = 50, nullable = false)
+        private String senha;
+
+        public long getId() {
+            return id;
+        }
+        public void setId(long id) {
+            this.id = id;
+        }
+        public String getCNPJ() {
+            return CNPJ;
+        }
+        public void setCNPJ(String cNPJ) {
+            CNPJ = cNPJ;
+        }
+        public String getNomeFantasia() {
+            return nomeFantasia;
+        }
+        public void setNomeFantasia(String nomeFantasia) {
+            this.nomeFantasia = nomeFantasia;
+        }
+        public String getLogin() {
+            return login;
+        }
+        public void setLogin(String login) {
+            this.login = login;
+        }
+        public String getSenha() {
+            return senha;
+        }
+        public void setSenha(String senha) {
+            this.senha = senha;
+        }
+>>>>>>> 3a472ec (alteracoes)
     }
 
     public void setId(long id) {
