@@ -9,22 +9,6 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
 @Entity
-<<<<<<< HEAD
-public class Fornecedor {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
-    private String CNPJ;
-    @Column(length = 1000, nullable = false)
-    private String nomeFantasia;
-    private String login;
-    private String senha;
-    @ManyToOne(cascade = { CascadeType.MERGE, CascadeType.REFRESH })
-    private Produto produto;
-
-    public long getId() {
-        return id;
-=======
     public class Fornecedor {
         @Id
         @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -68,7 +52,6 @@ public class Fornecedor {
         public void setSenha(String senha) {
             this.senha = senha;
         }
->>>>>>> 3a472ec (alteracoes)
     }
 
     public void setId(long id) {

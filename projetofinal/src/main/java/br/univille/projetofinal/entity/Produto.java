@@ -13,11 +13,7 @@ import javax.persistence.ManyToOne;
     public class Produto{
         @Id
         @GeneratedValue (strategy = GenerationType.IDENTITY)
-<<<<<<< HEAD
-        private  long id;
-=======
         @Column(length = 150, nullable = false)
->>>>>>> 3a472ec (alteracoes)
         private String nome;
         private float precoAtual;
         private int quantidade;
