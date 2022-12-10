@@ -73,10 +73,4 @@ import javax.persistence.ManyToOne;
         public void setFornecedor(Fornecedor fornecedor) {
             this.fornecedor = fornecedor;
         }
-        public long getId() {
-            return id;
-        }
-        public void setId(long id) {
-            this.id = id;
-        }
     }

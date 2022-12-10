@@ -1,12 +1,10 @@
 package br.univille.projetofinal.entity;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
 
 @Entity
     public class Fornecedor {
@@ -28,24 +26,28 @@ import javax.persistence.ManyToOne;
         public void setId(long id) {
             this.id = id;
         }
+
         public String getCNPJ() {
             return CNPJ;
         }
         public void setCNPJ(String cNPJ) {
             CNPJ = cNPJ;
         }
+
         public String getNomeFantasia() {
             return nomeFantasia;
         }
         public void setNomeFantasia(String nomeFantasia) {
             this.nomeFantasia = nomeFantasia;
         }
+
         public String getLogin() {
             return login;
         }
         public void setLogin(String login) {
             this.login = login;
         }
+
         public String getSenha() {
             return senha;
         }
@@ -53,48 +55,3 @@ import javax.persistence.ManyToOne;
             this.senha = senha;
         }
     }
-
-    public void setId(long id) {
-        this.id = id;
-    }
-
-    public Produto getProduto() {
-        return produto;
-    }
-
-    public void setProduto(Produto produto) {
-        this.produto = produto;
-    }
-
-    public String getCNPJ() {
-        return CNPJ;
-    }
-
-    public void setCNPJ(String cNPJ) {
-        CNPJ = cNPJ;
-    }
-
-    public String getLogin() {
-        return login;
-    }
-
-    public void setLogin(String login) {
-        this.login = login;
-    }
-
-    public String getSenha() {
-        return senha;
-    }
-
-    public void setSenha(String senha) {
-        this.senha = senha;
-    }
-
-    public String getNomeFantasia() {
-        return nomeFantasia;
-    }
-
-    public void setNomeFantasia(String nomeFantasia) {
-        this.nomeFantasia = nomeFantasia;
-    }
-}
