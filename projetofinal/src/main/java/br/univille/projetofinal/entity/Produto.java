@@ -13,7 +13,11 @@ import javax.persistence.ManyToOne;
         @Id
         @GeneratedValue (strategy = GenerationType.IDENTITY)
 <<<<<<< HEAD
+<<<<<<< HEAD
         @Column(length = 150, nullable = false)
+=======
+        private  long id;
+>>>>>>> parent of 8eeabb5 (alteracoes)
 =======
         private  long id;
 >>>>>>> parent of 8eeabb5 (alteracoes)
