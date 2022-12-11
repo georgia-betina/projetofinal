@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+    <head th:include="layout :: head"></head>
+
+    <body>
+        <nav th:replace="layout :: menu"></nav>
+        <main class="container">
+            
+            <a href="/clientes/novo" class="btn btn-primary">Novo</a>
+            <table class="table" id="tabclientes">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>CPF</th>
+                        <th>Nome</th>                        
+                        <th>Data Cadastro</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="umCliente : ${listaClientes}">
+                        <td th:text="${umCliente.id}"></td>
+                        <td th:text="${umCliente.CPF}"></td>
+                        <td th:text="${umCliente.nome}"></td>                      
+                        <td th:if="${umCliente.dataCadastro}"
+                            th:text="${#dates.format(umCliente.dataCadastro, 'dd/MM/yyyy')}"></td>
+                        <td th:unless="${umCliente.dataCadastro}">Não informada</td>                        
+                    </tr>
+                </tbody>
+            </table>
+        </main>
+    </body>
+</html>
