@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,900;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital@1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap');
+
+body {
+    margin: 0;
+    background-color: #5f5f54;
+}
+
+#nav {
+    background-color: #333533;
+    border-bottom: 5px solid #F0A202;
+    padding: 0.5em 0 1em 2em;
+    z-index: 1;
+}
+
+#nav-login {
+    display: inline-block;
+    margin-left: auto;
+    background-color: #F0A202;
+}
+
+#title {
+    font-family: 'Mulish', sans-serif;
+    color: whitesmoke;
+    font-size: 5em;
+}
+
+#title-cupom {
+    font-weight: 900;
+    background-image: linear-gradient(to right, #c1121f , red);
+    background-clip: text;
+    color: transparent;
+}
+
+#title-mania {
+    font-weight: 400;
+    font-style: italic;
+}
+
+#descrip {
+    color: whitesmoke;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+#descrip > em {
+    color: #F0A202;
+}
+
+nav {
+    background-color: #4a4a4a;
+    list-style: none;
+    font-family: 'Roboto', sans-serif;
+    color: white;
+    display: flex;
+    z-index: 0;
+    padding: 0.5em;
+}
+
+h1 {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 900;
+    text-align: center;
+    color: #ffac06;
+}

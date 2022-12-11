@@ -31,10 +31,8 @@ public class FornecedorController{
     @GetMapping("/novo")
     public ModelAndView novo(){
         var fornecedor = new Fornecedor(); 
-        var listaProdutos = produtoService.getAll();
         HashMap<String,Object> dados = new HashMap<>();
         dados.put("fornecedor", fornecedor);
-        dados.put("listaProdutos", listaProdutos);
         return new ModelAndView("fornecedor/form", dados);
 
     }

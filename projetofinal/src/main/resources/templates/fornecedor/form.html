@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/registro.css">
+</head>
+
+<body>
+    <div id="nav">
+        <div id="title">
+            <span id="title-cupom">CUPOM</span> <span id="title-mania">Mania</span>
+        </div>
+        <div id="descrip">
+            Resgatar cupom do seu eletrônico favorito é <em>aqui</em>!
+        </div>
+    </div>
+
+        <form th:action="@{/fornecedores/(form)}"
+            method="POST" th:object="${fornecedor}">
+            <input type="hidden" th:field="*{id}">
+            <div class="form-group">
+                <label for="txtCNPJ">CNPJ:</label>
+                <input type="text" th:field="*{CNPJ}"
+                    class="form-control" id="txtCNPJ">
+
+            </div>
+            <div class="form-group">
+                <label for="txtnomeFantasia">Nome Fantasia:</label>
+                <input type="text" th:field="*{nomeFantasia}"
+                    class="form-control" id="txtnomeFantasia">
+                <p th:if="${#fields.hasErrors('nomeFantasia')}"
+                    th:errors="*{nomeFantasia}"
+                    class="alert alert-danger"></p>
+            </div>
+
+            <div class="form-group">
+                <label for="txtlogin">Login:</label>
+                <input type="text" th:field="*{login}"
+                    class="form-control" id="txtlogin">
+            </div>
+
+            <div class="form-group">
+                <label for="txtsenha">Senha:</label>
+                <input type="password" th:field="*{senha}"
+                    class="form-control" id="txtsenha">
+            </div>
+
+            <button type="submit" class="btn btn-primary">Registrar</button>
+
+        </form>
+</body>
+</html>

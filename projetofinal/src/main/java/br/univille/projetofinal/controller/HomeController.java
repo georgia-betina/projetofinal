@@ -7,15 +7,17 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
-@RequestMapping({"/home","/"})
+@RequestMapping("/")
 public class HomeController {
 
-    private int contador;
-
-    @GetMapping
+    @GetMapping({"/home",""})
     public ModelAndView index(){
-        contador++;
-        return new ModelAndView("home/index","valor",contador);
+        return new ModelAndView("home/index");
+    }
+
+    @GetMapping("/login")
+    public ModelAndView login(){
+        return new ModelAndView("home/login");
     }
 }
 

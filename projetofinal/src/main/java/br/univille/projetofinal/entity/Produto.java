@@ -16,6 +16,7 @@ import javax.persistence.ManyToOne;
         @Column(length = 150, nullable = false)
         private  long id;
         private String nome;
+        private String imagem;
         private float precoAtual;
         private int quantidade;
         private float desconto;
@@ -30,6 +31,12 @@ import javax.persistence.ManyToOne;
         }
         public void setNome(String nome) {
             this.nome = nome;
+        }
+        public String getImagem() {
+            return imagem;
+        }
+        public void setImagem(String imagem) {
+            this.imagem = imagem;
         }
         public float getPrecoAtual() {
             return precoAtual;

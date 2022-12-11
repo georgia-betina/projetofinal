@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/registro.css">
+</head>
+
+<body>
+    <div id="nav">
+        <div id="title">
+            <span id="title-cupom">CUPOM</span> <span id="title-mania">Mania</span>
+        </div>
+        <div id="descrip">
+            Resgatar cupom do seu eletrônico favorito é <em>aqui</em>!
+        </div>
+    </div>
+
+        <form th:action="@{/produtos/(form)}"
+            method="POST" th:object="${produto}">
+            <div class="form-group">
+                <label for="txtnome">Nome:</label>
+                <input type="text" th:field="*{nome}"
+                    class="form-control" id="txtnome">
+            </div>
+            
+            <div class="form-group">
+                <label for="txtimagem">Imagem:</label>
+                <input type="file" th:field="*{imagem}"
+                    class="form-control" id="txtimagem" accept=".jpg, .jpeg, .png">
+            </div>
+
+            <div class="form-group">
+                <label for="txtprecoAtual">Preço Atual:</label>
+                <input type="text" th:field="*{precoAtual}"
+                    class="form-control" id="txtprecoAtual">
+            </div>
+
+            <div class="form-group">
+                <label for="txtquantidade">Quantidade:</label>
+                <input type="text" th:field="*{quantidade}"
+                    class="form-control" id="txtquantidade">
+            </div>
+
+            <div class="form-group">
+                <label for="txtdesconto">Desconto:</label>
+                <input type="text" th:field="*{desconto}"
+                    class="form-control" id="txtdesconto">
+            </div>
+
+            <div class="form-group">
+                <label for="txtnomeCupom">Nome do Cupom:</label>
+                <input type="text" th:field="*{nomeCupom}"
+                    class="form-control" id="txtnomeCupom">
+            </div>
+
+            <div class="form-group">
+                <label for="txtdataFim">Data Final:</label>
+                <input type="date" th:field="*{dataFim}"
+                    class="form-control" id="txtdataFim">
+            </div>
+
+            <div class="form-group">
+                <label for="txtdataInclusao">Data de Inclusão:</label>
+                <input type="date" th:field="*{dataInclusao}"
+                    class="form-control" id="txtdataInclusao">
+            </div>
+
+            <button type="submit" class="btn btn-primary">Cadastrar</button>
+
+        </form>
+</body>
+</html>

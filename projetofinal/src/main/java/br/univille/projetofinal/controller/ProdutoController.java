@@ -19,12 +19,12 @@ public class ProdutoController{
     @GetMapping
     public ModelAndView index(){
         var listaProdutos = service.getAll();
-        return new ModelAndView("produtos/index","listaProdutos", listaProdutos); 
+        return new ModelAndView("produto/index","listaProdutos", listaProdutos); 
     }
     @GetMapping("/novo")
     public ModelAndView novo(){
         var produto = new Produto();
-        return new ModelAndView("produtos/form","produto",produto);
+        return new ModelAndView("produto/form","produto",produto);
     }
     @GetMapping("/alterar/{id}")
     public ModelAndView alterar(@PathVariable("id") long id){

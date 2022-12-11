@@ -6,6 +6,7 @@ import javax.persistence.Id;
         @Id
         private String login;
         private String senha;
+        
         public String getLogin() {
             return login;
         }
