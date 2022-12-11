@@ -8,5 +8,6 @@ public interface FuncionarioService{
     List<Funcionario> getAll();
     Funcionario save(Funcionario funcionario);
     Funcionario findById(long id);   
-    void delete(long id);     
+    void delete(long id); 
+    List<Funcionario> findByLoginAndSenha(String login, String senha);    
 }

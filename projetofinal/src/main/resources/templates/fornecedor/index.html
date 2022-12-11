@@ -21,11 +21,12 @@
 
             <h1>FAZER LOGIN</h1>
 
-            <form>
-                <label for="loginUsuario">Login</label>
-                <input name="loginUsuario" type="text" value="" placeholder="Login">
-                <label for="senhaUsuario">Senha</label>
-                <input name="senhaUsuario" type="password" value="" placeholder="Senha">
+            <form th:action="@{/fornecedores/login}"
+            method="POST">
+                <label for="login">Login</label>
+                <input name="login" type="text" value="" placeholder="Login">
+                <label for="senha">Senha</label>
+                <input name="senha" type="password" value="" placeholder="Senha">
             </form>
 
             <button type="submit">Entrar</button>

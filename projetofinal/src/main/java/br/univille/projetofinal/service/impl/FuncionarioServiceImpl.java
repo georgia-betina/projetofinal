@@ -40,4 +40,8 @@ implements FuncionarioService{
         repositorio.deleteById(id);
     }
 
+    @Override
+    public List<Funcionario> findByLoginAndSenha(String login, String senha) {
+        return repositorio.findByLoginAndSenha(login, senha);
+    }
 }

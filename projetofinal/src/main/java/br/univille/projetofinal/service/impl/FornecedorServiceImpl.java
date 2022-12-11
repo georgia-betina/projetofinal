@@ -40,4 +40,8 @@ implements FornecedorService{
         repositorio.deleteById(id);
     }
 
+    @Override
+    public List<Fornecedor> findByLoginAndSenha(String login, String senha) {
+        return repositorio.findByLoginAndSenha(login, senha);
+    }
 }

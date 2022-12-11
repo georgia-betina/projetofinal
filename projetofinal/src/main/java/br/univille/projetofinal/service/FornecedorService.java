@@ -8,5 +8,6 @@ public interface FornecedorService{
     List<Fornecedor> getAll();
     Fornecedor save(Fornecedor fornecedor);
     Fornecedor findById(long id);   
-    void delete(long id);     
-    }
+    void delete(long id);
+    List<Fornecedor> findByLoginAndSenha(String login, String senha);    
+}

@@ -4,16 +4,18 @@
 import java.util.HashMap;
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
- import org.springframework.stereotype.Controller;
- import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
- import br.univille.projetofinal.entity.Cliente;
+import br.univille.projetofinal.entity.Cliente;
 import br.univille.projetofinal.service.ClienteService;
 
 @Controller
@@ -49,12 +51,14 @@ public class ClienteController {
     }
     
     @PostMapping("/login")
-    public ModelAndView login(@RequestParam String login, @RequestParam String senha){
+    public ModelAndView login(@RequestParam String login, @RequestParam String senha, HttpSession session){
         List<Cliente> clientes = service.findByLoginAndSenha(login, senha);
         System.out.println(clientes);
-        if (clientes == null){
+        if (clientes.isEmpty()){
             return new ModelAndView("redirect:/login");
         }
+        session.setMaxInactiveInterval(60);
+        session.setAttribute("tipo", "cliente");
         return new ModelAndView("redirect:/home");
     }
 
