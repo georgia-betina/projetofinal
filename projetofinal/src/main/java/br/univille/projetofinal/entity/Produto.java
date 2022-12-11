@@ -2,7 +2,6 @@ package br.univille.projetofinal.entity;
 
 import java.util.Date;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -13,12 +12,15 @@ import javax.persistence.ManyToOne;
     public class Produto{
         @Id
         @GeneratedValue (strategy = GenerationType.IDENTITY)
+<<<<<<< HEAD
         @Column(length = 150, nullable = false)
+=======
+        private  long id;
+>>>>>>> parent of 8eeabb5 (alteracoes)
         private String nome;
         private float precoAtual;
         private int quantidade;
         private float desconto;
-        @Column(length = 50, nullable = false)
         private String nomeCupom;
         private Date dataFim;
         private Date dataInclusao;
