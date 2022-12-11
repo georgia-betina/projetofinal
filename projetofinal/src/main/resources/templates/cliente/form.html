@@ -42,6 +42,18 @@
                     class="form-control" id="txtDataCadastro">
             </div>
 
+            <div class="form-group">
+                <label for="txtlogin">Login:</label>
+                <input type="text" th:field="*{login}"
+                    class="form-control" id="txtlogin">
+            </div>
+
+            <div class="form-group">
+                <label for="txtsenha">Senha:</label>
+                <input type="password" th:field="*{senha}"
+                    class="form-control" id="txtsenha">
+            </div>
+
             <button type="submit" class="btn btn-primary">Registrar</button>
 
         </form>

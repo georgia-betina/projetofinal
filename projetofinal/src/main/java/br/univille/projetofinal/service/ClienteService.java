@@ -10,4 +10,5 @@ public interface ClienteService {
     Cliente findById(long id);
     void delete(long id);
     List<Cliente> findByNome(String nome);
+    List<Cliente> findByLoginAndSenha(String login, String senha);
 }

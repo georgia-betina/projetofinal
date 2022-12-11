@@ -11,6 +11,7 @@ import br.univille.projetofinal.entity.Cliente;
 @Repository
 public interface ClienteRepository extends JpaRepository <Cliente, Long> {
     List<Cliente> findByNomeIgnoreCaseContaining(@Param("nome") String nome);
+    List<Cliente> findByLoginAndSenha(@Param("login") String login, @Param("senha") String senha);
 
 }
 

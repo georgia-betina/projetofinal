@@ -43,4 +43,9 @@ public class ClienteServiceImpl
     public List<Cliente> findByNome(String nome) {
         return repositorio.findByNomeIgnoreCaseContaining(nome);
     }
+
+    @Override
+    public List<Cliente> findByLoginAndSenha(String login, String senha) {
+        return repositorio.findByLoginAndSenha(login, senha);
+    }
 }

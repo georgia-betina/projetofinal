@@ -2,17 +2,19 @@
 
 
 import java.util.HashMap;
+import java.util.List;
 
- import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Autowired;
  import org.springframework.stereotype.Controller;
  import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
- import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
 
  import br.univille.projetofinal.entity.Cliente;
- import br.univille.projetofinal.service.ClienteService;
+import br.univille.projetofinal.service.ClienteService;
 
 @Controller
 @RequestMapping("/clientes")
@@ -40,11 +42,22 @@ public class ClienteController {
         return new ModelAndView("cliente/form", dados);
     }
 
-    @PostMapping("/form")
+    @PostMapping(params = "form")
     public ModelAndView save(Cliente cliente){
         service.save(cliente);
         return new ModelAndView("redirect:/clientes");
     }
+    
+    @PostMapping("/login")
+    public ModelAndView login(@RequestParam String login, @RequestParam String senha){
+        List<Cliente> clientes = service.findByLoginAndSenha(login, senha);
+        System.out.println(clientes);
+        if (clientes == null){
+            return new ModelAndView("redirect:/login");
+        }
+        return new ModelAndView("redirect:/home");
+    }
+
     @GetMapping("/delete/{id}")
     public ModelAndView delete(@PathVariable("CPF") long id){
         service.delete(id);
