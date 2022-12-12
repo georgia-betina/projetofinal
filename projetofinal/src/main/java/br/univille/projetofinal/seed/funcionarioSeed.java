@@ -18,12 +18,14 @@ public class funcionarioSeed implements CommandLineRunner{
     }
 
     private void loadUserData() {
-        if (repo.count() == 0) {
             Funcionario func = new Funcionario();
+            func.setId(1);
+            func.setNome("admin");
             func.setLogin("admin");
             func.setSenha("admin");
+            System.out.println(func.getNome());
+            System.out.println("Striiing");
             repo.save(func);
-        }
     }
 }
 

@@ -20,6 +20,8 @@
         <li>Departamentos</li>
         <li>Sobre nós</li>
         <li>Contato</li>
+        <li th:if="${session.tipo == 'funcionario'}"><a href="funcionarios/novo">Funcionários</a></li>
+        <li th:if="${session.tipo == 'funcionario'}" th:text="${'Fornecedores'}"></li>
         <li id="nav-login"><a href="/login">Log-in</a></li>
     </nav>
 
@@ -100,6 +102,16 @@
         0.375,0.375 45.63,38.087 0.375,75.8 "/>
         </svg>
     </button> -->
+
+    <p>
+        Is session empty?
+        <th:block th:text="${session.isEmpty()} ? 'Yes' : 'No'">Yes</th:block>
+        <br>
+        <th:block th:text="${session.tipo}"></th:block>
+        <br>
+        <!--<th:block th:text="${session.tipo == funcionario} ? 'Yes' : 'No'">Yes</th:block>-->
+        <th:block th:if="${session.tipo == 'funcionario'}" th:text="${'kk'}"></th:block>
+    </p>
 
     <div class="footer-page">
         <!-- Container para footer da página -->

@@ -29,9 +29,11 @@ public class FuncionarioController {
     }
     @GetMapping("/novo")
     public ModelAndView novo(){
+        var listaFuncionarios = service.getAll();
         var funcionario = new Funcionario();
         HashMap<String,Object> dados = new HashMap<>();
         dados.put("funcionario",funcionario);
+        dados.put("funcionarios",listaFuncionarios);
         return new ModelAndView("funcionario/form", dados);
     }
     @GetMapping("/alterar/{id}")
@@ -43,9 +45,9 @@ public class FuncionarioController {
     }
 
     @PostMapping("/form")
-    public ModelAndView save(Funcionario funcionario){
+    public void save(Funcionario funcionario){
         service.save(funcionario);
-        return new ModelAndView("redirect:/funcionarios");
+        //return new ModelAndView("funcionario/form");
     }
 
     @PostMapping("/login")
@@ -61,8 +63,8 @@ public class FuncionarioController {
     }        
 
     @GetMapping("/delete/{id}")
-    public ModelAndView delete(@PathVariable("CPF") long id){
+    public ModelAndView delete(@PathVariable("id") long id){
         service.delete(id);
-        return new ModelAndView("redirect:/funcionarios");
+        return new ModelAndView("redirect:/funcionarios/novo");
     }
 }

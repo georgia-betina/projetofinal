@@ -19,8 +19,15 @@
         </div>
     </div>
 
-        <form th:action="@{/funcionarios/(form)}"
+        <form th:action="@{/funcionarios/form}"
             method="POST" th:object="${funcionario}">
+            <input type="hidden" th:field="*{id}">
+            <div class="form-group">
+                <label for="txtnome">Nome:</label>
+                <input type="text" th:field="*{nome}"
+                    class="form-control" id="txtnome">
+            </div>
+
             <div class="form-group">
                 <label for="txtlogin">Login:</label>
                 <input type="text" th:field="*{login}"
@@ -36,5 +43,29 @@
             <button type="submit" class="btn btn-primary">Registrar</button>
 
         </form>
+
+        <h1>FUNCIONÁRIOS REGISTRADOS</h1>
+
+        <table class="table" id="tabfuncionarios">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Nome</th>
+                    <th>Login</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="funcionario : ${funcionarios}">
+                    <td th:text="${funcionario.id}"></td>
+                    <td th:text="${funcionario.nome}"></td>
+                    <td th:text="${funcionario.login}"></td>
+                    <td>
+                        <button>Editar</button>
+                        <a th:href="'delete/'+${funcionario.id}">Excluir</a>
+                    </td>                      
+                </tr>
+            </tbody>
+        </table>
 </body>
 </html>
