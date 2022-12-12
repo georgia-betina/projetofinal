@@ -157,8 +157,8 @@ nav > li {
 
 .coupon-button {
     padding: 1em;
-    /* color: #F0A202; */
-    color: rgba(245, 245, 245, 0.856);
+    color: #F0A202;
+    /*color: rgba(245, 245, 245, 0.856);*/
     text-transform: uppercase;
     font-family: 'Roboto', sans-serif;
     font-weight: 600;
