@@ -109,3 +109,12 @@ a {
 .backToHome {
     text-decoration: none;
 }
+
+.backToHomeP {
+    font-size: small;
+    font-weight: 900;
+}
+
+.backToHomeP a {
+    text-decoration: none;
+}

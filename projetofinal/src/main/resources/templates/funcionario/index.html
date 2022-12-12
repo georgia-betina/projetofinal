@@ -21,19 +21,21 @@
             </div>
         </a>
 
-            <h1>FAZER LOGIN</h1>
+        <h1>FAZER LOGIN</h1>
 
-            <h2>Funcionário</h2>
+        <h2>Funcionário</h2>
 
-            <form th:action="@{/funcionarios/login}"
-            method="POST">
-                <label for="login">Login</label>
-                <input name="login" type="text" value="" placeholder="Login">
-                <label for="senha">Senha</label>
-                <input name="senha" type="password" value="" placeholder="Senha">
+        <form th:action="@{/funcionarios/login}"
+        method="POST">
+            <label for="login">Login</label>
+            <input name="login" type="text" value="" placeholder="Login">
+            <label for="senha">Senha</label>
+            <input name="senha" type="password" value="" placeholder="Senha">
 
-                <button type="submit">Entrar</button>
-            </form>
+            <button type="submit">Entrar</button>
+        </form>
+
+        <p class="backToHomeP"><a href="/">VOLTAR AO INÍCIO</a></p>   
             
             <!-- <button><a href="funcionarios/novo" class="btn btn-primary">Novo</a></button> -->
             <!-- <table class="table" id="tabclientes">
