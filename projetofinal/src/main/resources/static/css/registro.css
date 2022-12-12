@@ -162,4 +162,6 @@ a {
 
 .imageSize {
     width: 70px;
+    display: block;
+    margin: auto;
 }
