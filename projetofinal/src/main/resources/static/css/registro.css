@@ -5,7 +5,7 @@
 
 body {
     margin: 0;
-    background-color: #5f5f54;
+    background-color: #1a1a1a;
 }
 
 #nav {
@@ -29,9 +29,10 @@ body {
 
 #title-cupom {
     font-weight: 900;
+    /*background-color: #cc0c0c;
     background-image: linear-gradient(to right, #c1121f , red);
-    background-clip: text;
-    color: transparent;
+    background-clip: text;*/
+    color: #cc0c0c;
 }
 
 #title-mania {
@@ -79,6 +80,7 @@ form {
 
 label {
     font-family: 'Roboto', sans-serif;
+    color: #eee;
 }
 
 table {
