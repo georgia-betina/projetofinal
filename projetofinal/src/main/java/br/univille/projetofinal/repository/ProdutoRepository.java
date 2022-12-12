@@ -11,4 +11,5 @@ import br.univille.projetofinal.entity.Produto;
 @Repository
 public interface ProdutoRepository extends JpaRepository<Produto, Long>{
     List<Produto> findByFornecedorId(@Param("fornecedor_id") long id);
+    List<Produto> findTop5ByOrderByDataInclusaoAsc();
 }

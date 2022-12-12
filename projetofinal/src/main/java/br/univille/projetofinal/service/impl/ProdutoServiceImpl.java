@@ -42,4 +42,9 @@ public class ProdutoServiceImpl implements ProdutoService{
     public List<Produto> findByFornecedorId(long id) {
         return repositorio.findByFornecedorId(id);
     }
+
+    @Override
+    public List<Produto> findTop5ByOrderByDataInclusaoAsc() {
+       return repositorio.findTop5ByOrderByDataInclusaoAsc();
+    }
 }

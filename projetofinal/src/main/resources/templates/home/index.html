@@ -44,7 +44,7 @@
                     <span class="price-value" th:text="${produto.precoAtual*(1-(produto.desconto / 100))}">149,99</span>
                 </div>
                 <button th:if="${session.tipo != 'cliente'}" class="coupon-button"><a href="/clientes">Quero meu cupom</a></button>
-                <button th:if="${session.tipo == 'cliente'}" class="coupon-button">Mostrar cupom</button>
+                <button th:id="${'coupon'+produto.id}" th:if="${session.tipo == 'cliente'}" class="coupon-button" th:onclick="document.getElementById('coupon'+[[${produto.id}]]).innerHTML = [[${produto.nomeCupom}]]" th:text="${'Mostrar cupom'}">Mostrar cupom</button>
             </div>
         </div>
     </div>

@@ -17,14 +17,12 @@ import org.springframework.web.servlet.ModelAndView;
 
 import br.univille.projetofinal.entity.Fornecedor;
 import br.univille.projetofinal.service.FornecedorService;
-import br.univille.projetofinal.service.ProdutoService;
 
 @Controller
 @RequestMapping("/fornecedores")
 public class FornecedorController{
     @Autowired
     private FornecedorService service;
-    private ProdutoService produtoService;
     @GetMapping
     public ModelAndView index(){
         var listaFornecedores = service.getAll();

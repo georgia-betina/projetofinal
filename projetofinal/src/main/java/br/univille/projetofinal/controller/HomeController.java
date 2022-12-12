@@ -22,7 +22,7 @@ public class HomeController {
     @GetMapping({"/home",""})
     public ModelAndView index(){
         HashMap<String,Object> dados = new HashMap<>();
-        var listaProdutos = service.getAll();
+        var listaProdutos = service.findTop5ByOrderByDataInclusaoAsc();
         dados.put("produtos", listaProdutos);
         return new ModelAndView("home/index", dados);
     }

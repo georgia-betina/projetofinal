@@ -67,9 +67,8 @@ public class ProdutoController{
         Fornecedor fornecedor = new Fornecedor();
         fornecedor.setId((long)session.getAttribute("id"));
         produto.setFornecedor(fornecedor);
-        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
         String s = formatter.format(new Date());
-
         produto.setDataInclusao(s);
         service.save(produto);
         return new ModelAndView("redirect:/produtos/novo");
