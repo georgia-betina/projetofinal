@@ -57,7 +57,7 @@ public class ClienteController {
         if (clientes.isEmpty()){
             return new ModelAndView("redirect:/login");
         }
-        session.setMaxInactiveInterval(60);
+        session.setMaxInactiveInterval(60*60*24);
         session.setAttribute("tipo", "cliente");
         return new ModelAndView("redirect:/home");
     }

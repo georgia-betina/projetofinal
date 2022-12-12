@@ -65,7 +65,7 @@ public class FuncionarioController {
         if (funcionarios.isEmpty()){
             return new ModelAndView("redirect:/login");
         }
-        session.setMaxInactiveInterval(60);
+        session.setMaxInactiveInterval(60*60*24);
         session.setAttribute("tipo", "funcionario");
         return new ModelAndView("redirect:/home");
     }        

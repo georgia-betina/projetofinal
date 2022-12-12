@@ -2,6 +2,9 @@ package br.univille.projetofinal.controller;
 
 import java.io.IOException;
 import java.util.HashMap;
+import java.util.List;
+
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
@@ -16,6 +19,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
+import br.univille.projetofinal.entity.Fornecedor;
 import br.univille.projetofinal.entity.Produto;
 import br.univille.projetofinal.service.ProdutoService;
 import br.univille.projetofinal.util.ImageUtility;
@@ -31,9 +35,9 @@ public class ProdutoController{
         return new ModelAndView("produto/index","listaProdutos", listaProdutos); 
     }
     @GetMapping("/novo")
-    public ModelAndView novo(){
+    public ModelAndView novo(HttpSession session){
         var produto = new Produto();
-        var listaProdutos = service.getAll();
+        List<Produto> listaProdutos = service.findByFornecedorId((long) session.getAttribute("id"));
         HashMap<String,Object> dados = new HashMap<>();
         dados.put("produto",produto);
         dados.put("produtos",listaProdutos);
@@ -50,7 +54,7 @@ public class ProdutoController{
         return new ModelAndView("redirect:/produtos/novo");
     }
     @PostMapping("/form")
-    public ModelAndView save(Produto produto, @RequestParam MultipartFile imagemfile){
+    public ModelAndView save(Produto produto, @RequestParam MultipartFile imagemfile, HttpSession session){
         try {
             produto.setImagem(ImageUtility.compressImage(imagemfile.getBytes()));
             produto.setImagemTipo(imagemfile.getContentType());
@@ -58,6 +62,9 @@ public class ProdutoController{
             System.out.println(e);
             return new ModelAndView("redirect:/produtos/novo");
         }
+        Fornecedor fornecedor = new Fornecedor();
+        fornecedor.setId((long)session.getAttribute("id"));
+        produto.setFornecedor(fornecedor);
         service.save(produto);
         return new ModelAndView("redirect:/produtos/novo");
     }

@@ -65,12 +65,12 @@ public class FornecedorController{
     @PostMapping("/login")
     public ModelAndView login(@RequestParam String login, @RequestParam String senha, HttpSession session){
         List<Fornecedor> fornecedores = service.findByLoginAndSenha(login, senha);
-        System.out.println(fornecedores);
         if (fornecedores.isEmpty()){
             return new ModelAndView("redirect:/login");
         }
-        session.setMaxInactiveInterval(60);
+        session.setMaxInactiveInterval(60*60*24);
         session.setAttribute("tipo", "fornecedor");
+        session.setAttribute("id",fornecedores.get(0).getId());
         return new ModelAndView("redirect:/home");
     }
 

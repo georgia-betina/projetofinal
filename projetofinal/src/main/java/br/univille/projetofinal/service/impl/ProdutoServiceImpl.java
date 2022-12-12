@@ -37,4 +37,9 @@ public class ProdutoServiceImpl implements ProdutoService{
     public void delete(long id) {
         repositorio.deleteById(id);       
     }
+
+    @Override
+    public List<Produto> findByFornecedorId(long id) {
+        return repositorio.findByFornecedorId(id);
+    }
 }

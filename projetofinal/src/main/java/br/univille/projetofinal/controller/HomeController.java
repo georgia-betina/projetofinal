@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import org.springframework.web.servlet.ModelAndView;
 
-import br.univille.projetofinal.entity.Produto;
 import br.univille.projetofinal.service.ProdutoService;
 
 @Controller

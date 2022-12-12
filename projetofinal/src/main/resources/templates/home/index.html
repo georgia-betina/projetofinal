@@ -26,7 +26,8 @@
         <li th:if="${session.tipo == 'funcionario'}"><a href="funcionarios/novo">Funcionários</a></li>
         <li th:if="${session.tipo == 'funcionario'}"><a href="fornecedores/novo">Fornecedores</a></li>
         <li th:if="${session.tipo == 'fornecedor'}"><a href="produtos/novo">Produtos</a></li>
-        <li id="nav-login"><a href="/login">Log-in</a></li>
+        <li th:if="${session.tipo == null}" id="nav-login"><a href="/login">Log in</a></li>
+        <li th:if="${session.tipo != null}" id="nav-login" th:onclick="[[${#session.removeAttribute('tipo')}]]"><a href="/">Log out</a></li>
     </nav>
 
     <div class="container">
