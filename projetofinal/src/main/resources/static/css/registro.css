@@ -9,7 +9,7 @@ body {
 }
 
 #nav {
-    background-color: #333533;
+    background-color: #121212;
     border-bottom: 5px solid #F0A202;
     padding: 0.5em 0 1em 2em;
     z-index: 1;
@@ -117,4 +117,8 @@ a {
 
 .backToHomeP a {
     text-decoration: none;
+}
+
+.imageSize {
+    width: 70px;
 }

@@ -9,7 +9,7 @@ body {
 }
 
 #nav {
-    background-color: #333533;
+    background-color: #121212;
     padding: 0.5em 0 1em 2em;
     z-index: 1;
 }
@@ -57,8 +57,14 @@ nav {
 }
 
 nav > li {
-    background-color: #4a4a4a;
     padding: 0.5em 1em;
+}
+
+#border-above-nav {
+    display: block;
+    height: 5px;
+    background-color: red; /* For browsers that do not support gradients */
+    background-image: linear-gradient(to right, rgb(236, 124, 18) , rgb(245, 155, 20));
 }
 
 .titles-body {
@@ -142,6 +148,16 @@ nav > li {
     border-radius: 10px 10px 10px 10px;
     display: block;
     margin: auto;
+}
+
+.coupon-button a {
+    transition: 0.3s;
+    text-decoration: none;
+}
+
+.coupon-button a:hover {
+    color: #c1121f;
+    text-decoration: none;
 }
 
 button {

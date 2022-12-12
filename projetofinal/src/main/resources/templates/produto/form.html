@@ -23,7 +23,7 @@
 
     <h1>ADICIONAR PRODUTO</h1>
 
-        <form th:action="@{/produtos/form}"
+        <form th:action="@{/produtos/form}" enctype="multipart/form-data"
             method="POST" th:object="${produto}">
             <div class="form-group">
                 <label for="txtnome">Nome:</label>
@@ -32,10 +32,12 @@
             </div>
             
             <div class="form-group">
-                <label for="txtimagem">Imagem:</label>
-                <input type="file" th:field="*{imagem}"
-                    class="form-control" id="txtimagem" accept=".jpg, .jpeg, .png">
+                <label for="imagemfile">Imagem:</label>
+                <input type="file"
+                    class="form-control" id="imagemfile" name="imagemfile" accept=".jpg, .jpeg, .png">
             </div>
+            <input type="hidden" id="imagem" name="imagem" hidden>
+            <input type="hidden" id="imagemTipo" name="imagemTipo" hidden>
 
             <div class="form-group">
                 <label for="txtprecoAtual">Preço Atual:</label>
@@ -93,12 +95,13 @@
                     <th>Nome do Cupom</th>
                     <th>Data de Inclusão</th>
                     <th>Data Final</th>
+                    <th>Ações</th>
                 </tr>
             </thead>
             <tbody>
                 <tr th:each="produto : ${produtos}">
                     <td th:text="${produto.id}"></td>
-                    <td></td>
+                    <td><img class="imageSize" th:src="${'/produtos/imagem/'+produto.id}"></td>
                     <td th:text="${produto.nome}"></td>
                     <td th:text="${produto.precoAtual}"></td>
                     <td th:text="${produto.quantidade}"></td>

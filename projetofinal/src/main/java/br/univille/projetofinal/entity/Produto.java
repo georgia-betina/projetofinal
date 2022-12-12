@@ -14,7 +14,9 @@ import javax.persistence.ManyToOne;
         @Column(length = 150, nullable = false)
         private long id;
         private String nome;
-        private String imagem;
+        @Column(name = "imagem", length = 100000)
+        private byte[] imagem;
+        private String imagemTipo;
         private float precoAtual;
         private int quantidade;
         private float desconto;
@@ -36,11 +38,17 @@ import javax.persistence.ManyToOne;
         public void setNome(String nome) {
             this.nome = nome;
         }
-        public String getImagem() {
+        public byte[] getImagem() {
             return imagem;
         }
-        public void setImagem(String imagem) {
+        public void setImagem(byte[] imagem) {
             this.imagem = imagem;
+        }
+        public String getImagemTipo() {
+            return imagemTipo;
+        }
+        public void setImagemTipo(String imagemTipo) {
+            this.imagemTipo = imagemTipo;
         }
         public float getPrecoAtual() {
             return precoAtual;
