@@ -65,6 +65,14 @@ h1 {
     color: #ffac06;
 }
 
+h2 {
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    color: #f5bb47;
+    font-weight: normal;
+    font-size: small;
+}
+
 p {
     font-family: 'Roboto', sans-serif;
     text-align: center;
