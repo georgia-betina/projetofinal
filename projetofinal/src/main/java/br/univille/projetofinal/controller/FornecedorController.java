@@ -7,7 +7,6 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -32,11 +31,12 @@ public class FornecedorController{
     }
     @GetMapping("/novo")
     public ModelAndView novo(){
+        var listaFornecedores = service.getAll();
         var fornecedor = new Fornecedor(); 
         HashMap<String,Object> dados = new HashMap<>();
         dados.put("fornecedor", fornecedor);
+        dados.put("fornecedores",listaFornecedores);
         return new ModelAndView("fornecedor/form", dados);
-
     }
 
     @GetMapping("/alterar/{id}")
@@ -49,17 +49,10 @@ public class FornecedorController{
         return new ModelAndView("fornecedor/form",dados);
 
     }
-    @PostMapping(params = "form")
-    public ModelAndView save(Fornecedor fornecedor, BindingResult bindingResult){
-        if(bindingResult.hasErrors()){
-            var listaProdutos = produtoService.getAll();
-            HashMap<String, Object> dados = new HashMap<>();
-            dados.put("fornecedor", fornecedor);
-            dados.put("listaProdutos", listaProdutos);
-            return new ModelAndView("fornecedor/form", dados);
-        }
+    @PostMapping("/form")
+    public ModelAndView save(Fornecedor fornecedor){
         service.save(fornecedor);
-        return new ModelAndView("redirect:/fornecedores");
+        return new ModelAndView("redirect:/fornecedores/novo");
     }
 
     @PostMapping("/login")
@@ -77,6 +70,6 @@ public class FornecedorController{
     @GetMapping("/delete/{id}")
     public ModelAndView delete(@PathVariable("id") long id){
         service.delete(id);
-        return new ModelAndView("redirect:/fornecedores");
+        return new ModelAndView("redirect:/fornecedores/novo");
     }
 }

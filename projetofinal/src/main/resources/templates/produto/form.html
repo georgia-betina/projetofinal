@@ -19,7 +19,7 @@
         </div>
     </div>
 
-        <form th:action="@{/produtos/(form)}"
+        <form th:action="@{/produtos/form}"
             method="POST" th:object="${produto}">
             <div class="form-group">
                 <label for="txtnome">Nome:</label>
@@ -72,5 +72,40 @@
             <button type="submit" class="btn btn-primary">Cadastrar</button>
 
         </form>
+
+        <h1>PRODUTOS CADASTRADOS</h1>
+
+        <table class="table" id="tabprodutos">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Imagem</th>
+                    <th>Nome</th>
+                    <th>Preço Atual</th>
+                    <th>Quantidade</th>
+                    <th>Desconto</th>
+                    <th>Nome do Cupom</th>
+                    <th>Data de Inclusão</th>
+                    <th>Data Final</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="produto : ${produtos}">
+                    <td th:text="${produto.id}"></td>
+                    <td></td>
+                    <td th:text="${produto.nome}"></td>
+                    <td th:text="${produto.precoAtual}"></td>
+                    <td th:text="${produto.quantidade}"></td>
+                    <td th:text="${produto.desconto}"></td>
+                    <td th:text="${produto.nomeCupom}"></td>
+                    <td th:text="${produto.dataInclusao}"></td>
+                    <td th:text="${produto.dataFim}"></td>
+                    <td>
+                        <button>Editar</button>
+                        <a th:href="'delete/'+${produto.id}">Excluir</a>
+                    </td>                      
+                </tr>
+            </tbody>
+        </table>
 </body>
 </html>

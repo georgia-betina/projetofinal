@@ -23,8 +23,6 @@ public class funcionarioSeed implements CommandLineRunner{
             func.setNome("admin");
             func.setLogin("admin");
             func.setSenha("admin");
-            System.out.println(func.getNome());
-            System.out.println("Striiing");
             repo.save(func);
     }
 }

@@ -19,7 +19,7 @@
         </div>
     </div>
 
-        <form th:action="@{/fornecedores/(form)}"
+        <form th:action="@{/fornecedores/form}"
             method="POST" th:object="${fornecedor}">
             <input type="hidden" th:field="*{id}">
             <div class="form-group">
@@ -52,5 +52,29 @@
             <button type="submit" class="btn btn-primary">Registrar</button>
 
         </form>
+
+        <h1>FORNECEDORES REGISTRADOS</h1>
+
+        <table class="table" id="tabfornecedores">
+            <thead>
+                <tr>
+                    <th>CNPJ</th>
+                    <th>Nome Fantasia</th>
+                    <th>Login</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="fornecedor : ${fornecedores}">
+                    <td th:text="${fornecedor.id}"></td>
+                    <td th:text="${fornecedor.nomeFantasia}"></td>
+                    <td th:text="${fornecedor.login}"></td>
+                    <td>
+                        <button>Editar</button>
+                        <a th:href="'delete/'+${fornecedor.id}">Excluir</a>
+                    </td>                      
+                </tr>
+            </tbody>
+        </table>
 </body>
 </html>

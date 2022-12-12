@@ -21,7 +21,8 @@
         <li>Sobre nós</li>
         <li>Contato</li>
         <li th:if="${session.tipo == 'funcionario'}"><a href="funcionarios/novo">Funcionários</a></li>
-        <li th:if="${session.tipo == 'funcionario'}" th:text="${'Fornecedores'}"></li>
+        <li th:if="${session.tipo == 'funcionario'}"><a href="fornecedores/novo">Fornecedores</a></li>
+        <li th:if="${session.tipo == 'fornecedor'}"><a href="produtos/novo">Produtos</a></li>
         <li id="nav-login"><a href="/login">Log-in</a></li>
     </nav>
 
@@ -38,7 +39,8 @@
                     <span class="price-sign">R$</span>
                     <span class="price-value">149,99</span>
                 </div>
-                <button class="coupon-button">Quero meu cupom</button>
+                <button th:if="${session.tipo != 'cliente'}" class="coupon-button"><a href="/clientes">Quero meu cupom</a></button>
+                <button th:if="${session.tipo == 'cliente'}" class="coupon-button">Mostrar cupom</button>
             </div>
             <div class="new-item">
                 <div class="discount">41% off</div>
@@ -49,7 +51,8 @@
                     <span class="price-sign">R$</span>
                     <span class="price-value">13,99</span>
                 </div>
-                <button class="coupon-button">Quero meu cupom</button>
+                <button th:if="${session.tipo != 'cliente'}" class="coupon-button"><a href="/clientes">Quero meu cupom</a></button>
+                <button th:if="${session.tipo == 'cliente'}" class="coupon-button">Mostrar cupom</button>
             </div>
             <div class="new-item">
                 <div class="discount">23% off</div>
@@ -60,7 +63,8 @@
                     <span class="price-sign">R$</span>
                     <span class="price-value">769,99</span>
                 </div>
-                <button class="coupon-button">Quero meu cupom</button>
+                <button th:if="${session.tipo != 'cliente'}" class="coupon-button"><a href="/clientes">Quero meu cupom</a></button>
+                <button th:if="${session.tipo == 'cliente'}" class="coupon-button">Mostrar cupom</button>
             </div>
             <div class="new-item">
                 <div class="discount">28% off</div>
@@ -71,7 +75,8 @@
                     <span class="price-sign">R$</span>
                     <span class="price-value">24,99</span>
                 </div>
-                <button class="coupon-button">Quero meu cupom</button>
+                <button th:if="${session.tipo != 'cliente'}" class="coupon-button"><a href="/clientes">Quero meu cupom</a></button>
+                <button th:if="${session.tipo == 'cliente'}" class="coupon-button">Mostrar cupom</button>
             </div>
             <div class="new-item">
                 <div class="discount">12% off</div>
@@ -82,7 +87,9 @@
                     <span class="price-sign">R$</span>
                     <span class="price-value">351,91</span>
                 </div>
-                <button class="coupon-button">Quero meu cupom</button>
+                <button th:if="${session.tipo != 'cliente'}" class="coupon-button"><a href="/clientes">Quero meu cupom</a></button>
+                <button th:if="${session.tipo == 'cliente'}" class="coupon-button">Mostrar cupom</button>
+                <!--<button th:if="${session.tipo != 'cliente' || session.tipo != null}" class="coupon-button"><a href="/clientes/">Quero meu cupom</a></button>-->
             </div>
             <div class="new-item"><img src=""></div>
             <div class="new-item"><img src=""></div>

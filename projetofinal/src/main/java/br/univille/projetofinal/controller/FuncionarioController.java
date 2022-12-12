@@ -27,6 +27,7 @@ public class FuncionarioController {
     public ModelAndView index(){
         return new ModelAndView("funcionario/index");
     }
+    
     @GetMapping("/novo")
     public ModelAndView novo(){
         var listaFuncionarios = service.getAll();
@@ -36,6 +37,7 @@ public class FuncionarioController {
         dados.put("funcionarios",listaFuncionarios);
         return new ModelAndView("funcionario/form", dados);
     }
+
     @GetMapping("/alterar/{id}")
     public ModelAndView alterar(@PathVariable("id") long id ){
         var umFuncionario = service.findById(id);
@@ -45,15 +47,14 @@ public class FuncionarioController {
     }
 
     @PostMapping("/form")
-    public void save(Funcionario funcionario){
+    public ModelAndView save(Funcionario funcionario){
         service.save(funcionario);
-        //return new ModelAndView("funcionario/form");
+        return new ModelAndView("redirect:/funcionarios/novo");
     }
 
     @PostMapping("/login")
     public ModelAndView login(@RequestParam String login, @RequestParam String senha, HttpSession session){
         List<Funcionario> funcionarios = service.findByLoginAndSenha(login, senha);
-        System.out.println(funcionarios);
         if (funcionarios.isEmpty()){
             return new ModelAndView("redirect:/login");
         }
@@ -64,7 +65,12 @@ public class FuncionarioController {
 
     @GetMapping("/delete/{id}")
     public ModelAndView delete(@PathVariable("id") long id){
+        List<Funcionario> funcionarios = service.getAll();
+        HashMap<String, Object> dados = new HashMap<>();
+        if (funcionarios.size()==1){
+            return new ModelAndView("redirect:/funcionarios/novo", dados);
+        }
         service.delete(id);
-        return new ModelAndView("redirect:/funcionarios/novo");
+        return new ModelAndView("redirect:/funcionarios/novo", dados);
     }
 }
