@@ -15,7 +15,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
@@ -52,8 +51,23 @@ public class ProdutoController{
         dados.put("produto", umProduto);
         return new ModelAndView("produto/edit", dados);
     }
-    @PutMapping()
-    public ModelAndView alteraProduto(@PathVariable("id") long id, Produto produto){
+    @PostMapping("/edit/{id}")
+    public ModelAndView alteraProduto(@PathVariable("id") long id, Produto produto, @RequestParam MultipartFile imagemfile, HttpSession session){
+        if (imagemfile.isEmpty()){
+            Produto produtoAntigo = service.findById(id);
+            produto.setImagem(produtoAntigo.getImagem());
+            produto.setImagemTipo(produtoAntigo.getImagemTipo());
+        }else{
+            try {
+                produto.setImagem(ImageUtility.compressImage(imagemfile.getBytes()));
+                produto.setImagemTipo(imagemfile.getContentType());
+            } catch (IOException e) {
+                return new ModelAndView("redirect:/produtos/novo");
+            }
+        }
+        Fornecedor fornecedor = new Fornecedor();
+        fornecedor.setId((long)session.getAttribute("id"));
+        produto.setFornecedor(fornecedor);
         service.save(produto);
         return new ModelAndView("redirect:/produtos/novo");
     }

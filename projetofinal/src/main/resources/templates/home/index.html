@@ -20,9 +20,9 @@
     </a>
     <div id="border-above-nav"></div>
     <nav>
-        <li>Departamentos</li>
+        <!--<li>Departamentos</li>
         <li>Sobre nós</li>
-        <li>Contato</li>
+        <li>Contato</li>-->
         <li th:if="${session.tipo == 'funcionario'}"><a href="funcionarios/novo">Funcionários</a></li>
         <li th:if="${session.tipo == 'funcionario'}"><a href="fornecedores/novo">Fornecedores</a></li>
         <li th:if="${session.tipo == 'fornecedor'}"><a href="produtos/novo">Produtos</a></li>
@@ -81,15 +81,15 @@
         </svg>
     </button> -->
 
-    <p>
+    <!--<p>
         Is session empty?
         <th:block th:text="${session.isEmpty()} ? 'Yes' : 'No'">Yes</th:block>
         <br>
         <th:block th:text="${session.tipo}"></th:block>
         <br>
-        <!--<th:block th:text="${session.tipo == funcionario} ? 'Yes' : 'No'">Yes</th:block>-->
+        <th:block th:text="${session.tipo == funcionario} ? 'Yes' : 'No'">Yes</th:block>
         <th:block th:if="${session.tipo == 'funcionario'}" th:text="${'kk'}"></th:block>
-    </p>
+    </p>-->
 
     <div class="footer-page">
         <!-- Container para footer da página -->

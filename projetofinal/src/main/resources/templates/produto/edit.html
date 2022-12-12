@@ -23,7 +23,7 @@
 
     <h1>EDITAR PRODUTO</h1>
 
-    <form th:action="@{/produtos/form}" enctype="multipart/form-data"
+    <form th:action="${'/produtos/edit/'+produto.id}" enctype="multipart/form-data"
             method="POST" th:object="${produto}">
         <input type="hidden" th:field="*{id}">
         <div class="form-group">
@@ -72,7 +72,7 @@
 
         <input type="hidden" th:field="*{dataInclusao}" id="txtdataInclusao">
 
-        <button type="submit" class="btn btn-primary">Cadastrar</button>
+        <button type="submit" class="btn btn-primary">Editar</button>
 
         </form>
 
