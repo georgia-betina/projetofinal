@@ -109,6 +109,11 @@ label {
     letter-spacing: 1px;
 }
 
+#imagemfile.form-control {
+    color: #eee;
+    font-family: 'Roboto', sans-serif;
+}
+
 table {
     font-family: 'Roboto', sans-serif;
     border-collapse: collapse;
