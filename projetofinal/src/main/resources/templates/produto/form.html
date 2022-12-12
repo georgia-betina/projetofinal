@@ -69,11 +69,7 @@
                     class="form-control" id="txtdataFim">
             </div>
 
-            <div class="form-group">
-                <label for="txtdataInclusao">Data de Inclusão:</label>
-                <input type="date" th:field="*{dataInclusao}"
-                    class="form-control" id="txtdataInclusao">
-            </div>
+            <input type="hidden" th:field="*{dataInclusao}" id="txtdataInclusao">
 
             <button type="submit" class="btn btn-primary">Cadastrar</button>
 

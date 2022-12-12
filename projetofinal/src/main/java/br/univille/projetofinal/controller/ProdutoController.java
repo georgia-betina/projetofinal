@@ -1,6 +1,8 @@
 package br.univille.projetofinal.controller;
 
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 
@@ -65,6 +67,10 @@ public class ProdutoController{
         Fornecedor fornecedor = new Fornecedor();
         fornecedor.setId((long)session.getAttribute("id"));
         produto.setFornecedor(fornecedor);
+        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+        String s = formatter.format(new Date());
+
+        produto.setDataInclusao(s);
         service.save(produto);
         return new ModelAndView("redirect:/produtos/novo");
     }
