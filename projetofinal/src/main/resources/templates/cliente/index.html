@@ -10,6 +10,7 @@
     </head>
 
     <body>
+        <a class="backToHome" href="/">
             <div id="nav">
                 <div id="title">
                     <span id="title-cupom">CUPOM</span> <span id="title-mania">Mania</span>
@@ -18,21 +19,22 @@
                     Resgatar cupom do seu eletrônico favorito é <em>aqui</em>!
                 </div>
             </div>
+        </a>
 
-            <h1>FAZER LOGIN</h1>
+        <h1>FAZER LOGIN</h1>
 
-            <h2>Cliente</h2>
+        <h2>Cliente</h2>
 
-            <form th:action="@{/clientes/login}"
-            method="POST">
-                <label for="login">Login</label>
-                <input name="login" type="text" value="" placeholder="Login">
-                <label for="senha">Senha</label>
-                <input name="senha" type="password" value="" placeholder="Senha">
+        <form th:action="@{/clientes/login}"
+        method="POST">
+            <label for="login">Login</label>
+            <input name="login" type="text" value="" placeholder="Login">
+            <label for="senha">Senha</label>
+            <input name="senha" type="password" value="" placeholder="Senha">
 
-                <button type="submit">Entrar</button>
-            </form>
+            <button type="submit">Entrar</button>
+        </form>
 
-            <p><a href="clientes/novo">Cadastre-se</a></p>
+        <p><a href="clientes/novo">Cadastre-se</a></p>
     </body>
 </html>

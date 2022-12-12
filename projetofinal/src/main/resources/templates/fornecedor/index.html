@@ -10,6 +10,7 @@
     </head>
 
     <body>
+        <a class="backToHome" href="/">
             <div id="nav">
                 <div id="title">
                     <span id="title-cupom">CUPOM</span> <span id="title-mania">Mania</span>
@@ -18,41 +19,42 @@
                     Resgatar cupom do seu eletrônico favorito é <em>aqui</em>!
                 </div>
             </div>
+        </a>
 
-            <h1>FAZER LOGIN</h1>
+        <h1>FAZER LOGIN</h1>
 
-            <h2>Fornecedor</h2>
+        <h2>Fornecedor</h2>
 
-            <form th:action="@{/fornecedores/login}"
-            method="POST">
-                <label for="login">Login</label>
-                <input name="login" type="text" value="" placeholder="Login">
-                <label for="senha">Senha</label>
-                <input name="senha" type="password" value="" placeholder="Senha">
+        <form th:action="@{/fornecedores/login}"
+        method="POST">
+            <label for="login">Login</label>
+            <input name="login" type="text" value="" placeholder="Login">
+            <label for="senha">Senha</label>
+            <input name="senha" type="password" value="" placeholder="Senha">
 
-                <button type="submit">Entrar</button>
-            </form>
-            
-            <!-- <table class="table" id="tabclientes">
-                <thead>
-                    <tr>
-                        <th>Id</th>
-                        <th>CPF</th>
-                        <th>Nome</th>                        
-                        <th>Data Cadastro</th>
-                        <th></th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr th:each="umCliente : ${listaClientes}">
-                        <td th:text="${umCliente.id}"></td>
-                        <td th:text="${umCliente.CPF}"></td>
-                        <td th:text="${umCliente.nome}"></td>                      
-                        <td th:if="${umCliente.dataCadastro}"
-                            th:text="${#dates.format(umCliente.dataCadastro, 'dd/MM/yyyy')}"></td>
-                        <td th:unless="${umCliente.dataCadastro}">Não informada</td>                        
-                    </tr>
-                </tbody>
-            </table>-->
+            <button type="submit">Entrar</button>
+        </form>
+        
+        <!-- <table class="table" id="tabclientes">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>CPF</th>
+                    <th>Nome</th>                        
+                    <th>Data Cadastro</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="umCliente : ${listaClientes}">
+                    <td th:text="${umCliente.id}"></td>
+                    <td th:text="${umCliente.CPF}"></td>
+                    <td th:text="${umCliente.nome}"></td>                      
+                    <td th:if="${umCliente.dataCadastro}"
+                        th:text="${#dates.format(umCliente.dataCadastro, 'dd/MM/yyyy')}"></td>
+                    <td th:unless="${umCliente.dataCadastro}">Não informada</td>                        
+                </tr>
+            </tbody>
+        </table>-->
     </body>
 </html>

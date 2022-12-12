@@ -188,3 +188,7 @@ a {
     color: #F0A202;
     font-family: 'Roboto', sans-serif;
 }
+
+.backToHome {
+    text-decoration: none;
+}

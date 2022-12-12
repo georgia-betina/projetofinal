@@ -94,3 +94,7 @@ form {
 label {
     font-family: 'Roboto', sans-serif;
 }
+
+.backToHome {
+    text-decoration: none;
+}
