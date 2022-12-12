@@ -49,7 +49,8 @@ public class ProdutoController{
     public ModelAndView alterar(@PathVariable("id") long id){
         var umProduto = service.findById(id);
         HashMap<String, Object> dados = new HashMap<>();
-        return new ModelAndView("produtos/edit", "produto", umProduto);
+        dados.put("produto", umProduto);
+        return new ModelAndView("produto/edit", dados);
     }
     @PutMapping()
     public ModelAndView alteraProduto(@PathVariable("id") long id, Produto produto){
