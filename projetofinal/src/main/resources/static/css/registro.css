@@ -121,12 +121,13 @@ table {
 }
 
 table th {
-    background-color: #F0A202;
+    background-color: #121212;
     padding: 10px;
+    color: #eee;
 }
 
 table th, td {
-    border: 2px solid #F0A202;
+    border: 1px solid #121212;
 }
 
 table td {
