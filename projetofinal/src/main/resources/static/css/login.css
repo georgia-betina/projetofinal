@@ -102,11 +102,38 @@ ul > li > a {
 }
 
 form {
-    text-align: center;
+    width: 190px;
+    margin: auto;
+}
+
+form > button {
+    border: 1px solid rgba(245, 245, 245, 0.37);
+    border-radius: 10px 10px 10px 10px;
+    display: block;
+    padding: 5px 10px;
+    margin-top: 20px;
+    font-family: 'Roboto', sans-serif;
 }
 
 label {
     font-family: 'Roboto', sans-serif;
+    color: #eee;
+    text-align: left;
+}
+
+::-webkit-input-placeholder { /* Edge */
+    font-family: 'Roboto', sans-serif;
+    letter-spacing: 1px;
+}
+  
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    font-family: 'Roboto', sans-serif;
+    letter-spacing: 1px;
+}
+  
+::placeholder {
+    font-family: 'Roboto', sans-serif;
+    letter-spacing: 1px;
 }
 
 .backToHome {

@@ -27,11 +27,22 @@
 
         <form th:action="@{/clientes/login}"
         method="POST">
-            <label for="login">Login</label>
-            <input name="login" type="text" value="" placeholder="Login">
-            <label for="senha">Senha</label>
-            <input name="senha" type="password" value="" placeholder="Senha">
-
+            <div>
+                <div>
+                    <label for="login">Login</label>
+                </div>
+                <div>
+                    <input name="login" type="text" value="" placeholder="Login">
+                </div>
+            </div>
+            <div>
+                <div>
+                    <label for="senha">Senha</label>
+                </div>
+                <div>
+                    <input name="senha" type="password" value="" placeholder="Senha">
+                </div>
+            </div>
             <button type="submit">Entrar</button>
         </form>
 
