@@ -32,28 +32,5 @@
             </form>
 
             <p><a href="clientes/novo">Cadastre-se</a></p>
-            
-            <button><a href="clientes/novo" class="btn btn-primary">Novo</a></button>
-            <!-- <table class="table" id="tabclientes">
-                <thead>
-                    <tr>
-                        <th>Id</th>
-                        <th>CPF</th>
-                        <th>Nome</th>                        
-                        <th>Data Cadastro</th>
-                        <th></th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr th:each="umCliente : ${listaClientes}">
-                        <td th:text="${umCliente.id}"></td>
-                        <td th:text="${umCliente.CPF}"></td>
-                        <td th:text="${umCliente.nome}"></td>                      
-                        <td th:if="${umCliente.dataCadastro}"
-                            th:text="${#dates.format(umCliente.dataCadastro, 'dd/MM/yyyy')}"></td>
-                        <td th:unless="${umCliente.dataCadastro}">Não informada</td>                        
-                    </tr>
-                </tbody>
-            </table>-->
     </body>
 </html>

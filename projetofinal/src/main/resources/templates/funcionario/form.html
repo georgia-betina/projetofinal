@@ -19,6 +19,8 @@
         </div>
     </div>
 
+    <h1>ADICIONAR FUNCIONÁRIO</h1>
+
         <form th:action="@{/funcionarios/form}"
             method="POST" th:object="${funcionario}">
             <input type="hidden" th:field="*{id}">

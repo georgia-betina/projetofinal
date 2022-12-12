@@ -1,5 +1,7 @@
 package br.univille.projetofinal.controller;
 
+import java.util.HashMap;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -24,21 +26,25 @@ public class ProdutoController{
     @GetMapping("/novo")
     public ModelAndView novo(){
         var produto = new Produto();
-        return new ModelAndView("produto/form","produto",produto);
+        var listaProdutos = service.getAll();
+        HashMap<String,Object> dados = new HashMap<>();
+        dados.put("produto",produto);
+        dados.put("produtos",listaProdutos);
+        return new ModelAndView("produto/form",dados);
     }
     @GetMapping("/alterar/{id}")
     public ModelAndView alterar(@PathVariable("id") long id){
         var umProduto = service.findById(id);
         return new ModelAndView("produtos/form", "produto", umProduto);
     }
-    @PostMapping(params = "form")
+    @PostMapping("/form")
     public ModelAndView save(Produto produto){
         service.save(produto);
-        return new ModelAndView("redirect:/produtos");
+        return new ModelAndView("redirect:/produtos/novo");
     }
     @GetMapping("/delete/{id}")
     public ModelAndView delete(@PathVariable("id") long id){
         service.delete(id);
-        return new ModelAndView("redirect:/produtos");
+        return new ModelAndView("redirect:/produtos/novo");
     }
 }

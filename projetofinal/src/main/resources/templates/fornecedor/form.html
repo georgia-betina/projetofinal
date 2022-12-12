@@ -19,6 +19,8 @@
         </div>
     </div>
 
+    <h1>ADICIONAR FORNECEDOR</h1>
+
         <form th:action="@{/fornecedores/form}"
             method="POST" th:object="${fornecedor}">
             <input type="hidden" th:field="*{id}">

@@ -1,7 +1,5 @@
 package br.univille.projetofinal.entity;
 
-import java.util.Date;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -14,18 +12,24 @@ import javax.persistence.ManyToOne;
         @Id
         @GeneratedValue (strategy = GenerationType.IDENTITY)
         @Column(length = 150, nullable = false)
-        private  long id;
+        private long id;
         private String nome;
         private String imagem;
         private float precoAtual;
         private int quantidade;
         private float desconto;
         private String nomeCupom;
-        private Date dataFim;
-        private Date dataInclusao;
+        private String dataFim;
+        private String dataInclusao;
         @ManyToOne
         private Fornecedor fornecedor;
 
+        public long getId() {
+            return id;
+        }
+        public void setId(long id) {
+            this.id = id;
+        }
         public String getNome() {
             return nome;
         }
@@ -62,16 +66,16 @@ import javax.persistence.ManyToOne;
         public void setNomeCupom(String nomeCupom) {
             this.nomeCupom = nomeCupom;
         }
-        public Date getDataFim() {
+        public String getDataFim() {
             return dataFim;
         }
-        public void setDataFim(Date dataFim) {
+        public void setDataFim(String dataFim) {
             this.dataFim = dataFim;
         }
-        public Date getDataInclusao() {
+        public String getDataInclusao() {
             return dataInclusao;
         }
-        public void setDataInclusao(Date dataInclusao) {
+        public void setDataInclusao(String dataInclusao) {
             this.dataInclusao = dataInclusao;
         }
         public Fornecedor getFornecedor() {
