@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -36,6 +37,11 @@ public class ProdutoController{
     public ModelAndView alterar(@PathVariable("id") long id){
         var umProduto = service.findById(id);
         return new ModelAndView("produtos/form", "produto", umProduto);
+    }
+    @PutMapping()
+    public ModelAndView alteraProduto(@PathVariable("id") long id, Produto produto){
+        service.save(produto);
+        return new ModelAndView("redirect:/produtos/novo");
     }
     @PostMapping("/form")
     public ModelAndView save(Produto produto){

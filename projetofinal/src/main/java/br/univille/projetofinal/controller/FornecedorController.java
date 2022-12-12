@@ -10,6 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
@@ -42,13 +43,19 @@ public class FornecedorController{
     @GetMapping("/alterar/{id}")
     public ModelAndView alterar(@PathVariable("id") long id){
         var umFornecedor = service.findById(id);
-        var listaProdutos = produtoService.getAll();
+        //var listaProdutos = produtoService.getAll();
         HashMap<String, Object> dados = new HashMap<>();
         dados.put("fornecedor", umFornecedor);
-        dados.put("listaProdutos", listaProdutos); 
-        return new ModelAndView("fornecedor/form",dados);
-
+        //dados.put("listaProdutos", listaProdutos); 
+        return new ModelAndView("fornecedor/edit",dados);
     }
+
+    @PutMapping("/form")
+    public ModelAndView alteraFornecedor(@PathVariable("id") long id, Fornecedor fornecedor){
+        service.save(fornecedor);
+        return new ModelAndView("redirect:/fornecedores/novo");
+    }
+
     @PostMapping("/form")
     public ModelAndView save(Fornecedor fornecedor){
         service.save(fornecedor);

@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/registro.css">
+    <link rlink rel="stylesheet" th:href="@{/css/registro.css}">
 </head>
 
 <body>
@@ -19,7 +19,7 @@
         </div>
     </div>
 
-    <h1>ADICIONAR FUNCIONÁRIO</h1>
+    <h1>EDITAR FUNCIONÁRIO</h1>
 
         <form th:action="@{/funcionarios/form}"
             method="POST" th:object="${funcionario}">
@@ -42,32 +42,8 @@
                     class="form-control" id="txtsenha">
             </div>
 
-            <button type="submit" class="btn btn-primary">Registrar</button>
+            <button type="submit" class="btn btn-primary">Editar</button>
 
         </form>
-
-        <h1>FUNCIONÁRIOS REGISTRADOS</h1>
-
-        <table class="table" id="tabfuncionarios">
-            <thead>
-                <tr>
-                    <th>Id</th>
-                    <th>Nome</th>
-                    <th>Login</th>
-                    <th>Ações</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr th:each="funcionario : ${funcionarios}">
-                    <td th:text="${funcionario.id}"></td>
-                    <td th:text="${funcionario.nome}"></td>
-                    <td th:text="${funcionario.login}"></td>
-                    <td>
-                        <a th:href="'alterar/'+${funcionario.id}">Editar</a>
-                        <a th:href="'delete/'+${funcionario.id}">Excluir</a>
-                    </td>                      
-                </tr>
-            </tbody>
-        </table>
 </body>
 </html>

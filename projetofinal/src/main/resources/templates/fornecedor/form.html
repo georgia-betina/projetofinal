@@ -60,6 +60,7 @@
         <table class="table" id="tabfornecedores">
             <thead>
                 <tr>
+                    <th>Id</th>
                     <th>CNPJ</th>
                     <th>Nome Fantasia</th>
                     <th>Login</th>
@@ -69,10 +70,11 @@
             <tbody>
                 <tr th:each="fornecedor : ${fornecedores}">
                     <td th:text="${fornecedor.id}"></td>
+                    <td th:text="${fornecedor.CNPJ}"></td>
                     <td th:text="${fornecedor.nomeFantasia}"></td>
                     <td th:text="${fornecedor.login}"></td>
                     <td>
-                        <button>Editar</button>
+                        <a th:href="'alterar/'+${fornecedor.id}">Editar</a>
                         <a th:href="'delete/'+${fornecedor.id}">Excluir</a>
                     </td>                      
                 </tr>
