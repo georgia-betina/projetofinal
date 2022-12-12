@@ -5,7 +5,8 @@
 
 body {
     margin: 0;
-    background-color: #5f5f54;
+    background-color: #1a1a1a;
+    background-image: linear-gradient(#202020, rgb(48, 48, 48));
 }
 
 #nav {

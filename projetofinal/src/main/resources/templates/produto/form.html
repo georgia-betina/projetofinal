@@ -106,7 +106,7 @@
                     <td th:text="${produto.dataInclusao}"></td>
                     <td th:text="${produto.dataFim}"></td>
                     <td>
-                        <button>Editar</button>
+                        <a th:href="'alterar/'+${produto.id}">Editar</a>
                         <a th:href="'delete/'+${produto.id}">Excluir</a>
                     </td>                      
                 </tr>

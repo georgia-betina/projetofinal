@@ -11,4 +11,5 @@ public interface ProdutoService{
     void delete(long id);
     List<Produto> findByFornecedorId(long id);
     List<Produto> findTop5ByOrderByDataInclusaoAsc();
+    List<Produto> findByDataFimGreaterThan(String dataFim);
 }

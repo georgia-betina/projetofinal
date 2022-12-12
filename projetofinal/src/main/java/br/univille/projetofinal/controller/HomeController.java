@@ -1,5 +1,7 @@
 package br.univille.projetofinal.controller;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.HashMap;
 
 import javax.servlet.http.HttpSession;
@@ -23,7 +25,9 @@ public class HomeController {
     public ModelAndView index(){
         HashMap<String,Object> dados = new HashMap<>();
         var listaProdutos = service.findTop5ByOrderByDataInclusaoAsc();
-        var listaTodosProdutos = service.getAll();
+        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
+        String s = formatter.format(new Date());
+        var listaTodosProdutos = service.findByDataFimGreaterThan(s);
         dados.put("produtosNovidades", listaProdutos);
         dados.put("produtos", listaTodosProdutos);
         return new ModelAndView("home/index", dados);

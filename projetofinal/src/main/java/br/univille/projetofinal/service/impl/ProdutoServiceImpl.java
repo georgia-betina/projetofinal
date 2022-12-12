@@ -47,4 +47,9 @@ public class ProdutoServiceImpl implements ProdutoService{
     public List<Produto> findTop5ByOrderByDataInclusaoAsc() {
        return repositorio.findTop5ByOrderByDataInclusaoAsc();
     }
+
+    @Override
+    public List<Produto> findByDataFimGreaterThan(String dataFim) {
+       return repositorio.findByDataFimGreaterThan(dataFim);
+    }
 }
