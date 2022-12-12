@@ -2,6 +2,8 @@ package br.univille.projetofinal.controller;
 
 import java.util.HashMap;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -28,6 +30,12 @@ public class HomeController {
     @GetMapping("/login")
     public ModelAndView login(){
         return new ModelAndView("home/login");
+    }
+
+    @GetMapping("/logout")
+    public ModelAndView logout(HttpSession session){
+        session.removeAttribute("tipo");
+        return new ModelAndView("redirect:/");
     }
 }
 
