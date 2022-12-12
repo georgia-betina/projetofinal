@@ -37,7 +37,7 @@
             <div class="new-item" th:each="produto : ${produtos}">
                 <div class="discount" th:text="${produto.desconto+'% off'}"></div>
                 <img th:src="${'/produtos/imagem/'+produto.id}">
-                <div th:text="${produto.nome}"></div>
+                <div th:text="${produto.nome}" class="container-nome"></div>
                 <div class="price">
                     <span class="price-outdated" th:text="${'R$ '+produto.precoAtual}"></span>
                     <span class="price-sign">R$</span>
@@ -46,8 +46,6 @@
                 <button th:if="${session.tipo != 'cliente'}" class="coupon-button"><a href="/clientes">Quero meu cupom</a></button>
                 <button th:if="${session.tipo == 'cliente'}" class="coupon-button">Mostrar cupom</button>
             </div>
-            <div class="new-item"><img src=""></div>
-            <div class="new-item"><img src=""></div>
         </div>
     </div>
 

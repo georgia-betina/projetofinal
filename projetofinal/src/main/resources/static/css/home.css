@@ -86,12 +86,17 @@ nav > li {
 
 .container-flex {
     display: flex;
+    flex-flow: row wrap;
 }
 
 .new-item {
     border: 1px solid #ffffff1c;
     padding: 2em;
     margin: 1em;
+    display: flex;
+    flex-flow: column nowrap;
+    flex: 1;
+    min-width: 0;
 }
 
 .new-item > div {
@@ -104,6 +109,8 @@ nav > li {
 .new-item > img {
     width: 10em;
     padding-bottom: 2em;
+    display: block;
+    margin: auto;
 }
 
 .discount {
@@ -116,6 +123,10 @@ nav > li {
     color: whitesmoke;
     margin-left: auto;
     text-align: center;
+}
+
+.container-nome {
+    height: 46px;
 }
 
 .price-outdated {
