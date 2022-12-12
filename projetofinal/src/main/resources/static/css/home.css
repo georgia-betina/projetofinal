@@ -108,14 +108,14 @@ nav > li {
 
 .discount {
     margin-bottom: 0.5em;
-    width: 3.5em;
+    width: 5em;
     height: 1em;
     background-image: linear-gradient(to right, #cc0c0c , red);
     padding: 0.5em;
     border-radius: 2px;
     color: whitesmoke;
-    text-align: center;
     margin-left: auto;
+    text-align: center;
 }
 
 .price-outdated {

@@ -33,66 +33,17 @@
         <!-- Container para promoções novas -->
         <div class="titles-body">NOVIDADES</div>
         <div class="container-flex">
-            <div class="new-item">
-                <div class="discount">49% off</div>
-                <img src="images/products/teste1.jpg">
-                <div>Headset Gamer HyperX Cloud Stinger</div>
+            <div class="new-item" th:each="produto : ${produtos}">
+                <div class="discount" th:text="${produto.desconto+'% off'}"></div>
+                <img th:src="${'/produtos/imagem/'+produto.id}">
+                <div th:text="${produto.nome}"></div>
                 <div class="price">
-                    <span class="price-outdated">R$ 294,00</span>
+                    <span class="price-outdated" th:text="${'R$ '+produto.precoAtual}"></span>
                     <span class="price-sign">R$</span>
-                    <span class="price-value">149,99</span>
+                    <span class="price-value" th:text="${produto.precoAtual*(1-(produto.desconto / 100))}">149,99</span>
                 </div>
                 <button th:if="${session.tipo != 'cliente'}" class="coupon-button"><a href="/clientes">Quero meu cupom</a></button>
                 <button th:if="${session.tipo == 'cliente'}" class="coupon-button">Mostrar cupom</button>
-            </div>
-            <div class="new-item">
-                <div class="discount">41% off</div>
-                <img src="images/products/teste2.jpg">
-                <div>Pen Drive Multi Twist USB 2.0 8GB</div>
-                <div class="price">
-                    <span class="price-outdated">R$ 23,71</span>
-                    <span class="price-sign">R$</span>
-                    <span class="price-value">13,99</span>
-                </div>
-                <button th:if="${session.tipo != 'cliente'}" class="coupon-button"><a href="/clientes">Quero meu cupom</a></button>
-                <button th:if="${session.tipo == 'cliente'}" class="coupon-button">Mostrar cupom</button>
-            </div>
-            <div class="new-item">
-                <div class="discount">23% off</div>
-                <img src="images/products/teste3.jpg">
-                <div>Microfone Gamer HyperX QuadCast S</div>
-                <div class="price">
-                    <span class="price-outdated">R$ 999,98</span>
-                    <span class="price-sign">R$</span>
-                    <span class="price-value">769,99</span>
-                </div>
-                <button th:if="${session.tipo != 'cliente'}" class="coupon-button"><a href="/clientes">Quero meu cupom</a></button>
-                <button th:if="${session.tipo == 'cliente'}" class="coupon-button">Mostrar cupom</button>
-            </div>
-            <div class="new-item">
-                <div class="discount">28% off</div>
-                <img src="images/products/teste4.jpg">
-                <div>HUB USB 2.0 F3 com 7 Portas USB 2.0</div>
-                <div class="price">
-                    <span class="price-outdated">R$ 34,71</span>
-                    <span class="price-sign">R$</span>
-                    <span class="price-value">24,99</span>
-                </div>
-                <button th:if="${session.tipo != 'cliente'}" class="coupon-button"><a href="/clientes">Quero meu cupom</a></button>
-                <button th:if="${session.tipo == 'cliente'}" class="coupon-button">Mostrar cupom</button>
-            </div>
-            <div class="new-item">
-                <div class="discount">12% off</div>
-                <img src="images/products/teste5.jpg">
-                <div>Mesa Digitalizadora Huion Ispiroy 420</div>
-                <div class="price">
-                    <span class="price-outdated">R$ 399,90</span>
-                    <span class="price-sign">R$</span>
-                    <span class="price-value">351,91</span>
-                </div>
-                <button th:if="${session.tipo != 'cliente'}" class="coupon-button"><a href="/clientes">Quero meu cupom</a></button>
-                <button th:if="${session.tipo == 'cliente'}" class="coupon-button">Mostrar cupom</button>
-                <!--<button th:if="${session.tipo != 'cliente' || session.tipo != null}" class="coupon-button"><a href="/clientes/">Quero meu cupom</a></button>-->
             </div>
             <div class="new-item"><img src=""></div>
             <div class="new-item"><img src=""></div>
