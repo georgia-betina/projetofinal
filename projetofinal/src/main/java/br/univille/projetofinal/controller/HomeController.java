@@ -23,7 +23,9 @@ public class HomeController {
     public ModelAndView index(){
         HashMap<String,Object> dados = new HashMap<>();
         var listaProdutos = service.findTop5ByOrderByDataInclusaoAsc();
-        dados.put("produtos", listaProdutos);
+        var listaTodosProdutos = service.getAll();
+        dados.put("produtosNovidades", listaProdutos);
+        dados.put("produtos", listaTodosProdutos);
         return new ModelAndView("home/index", dados);
     }
 

@@ -34,14 +34,32 @@
         <!-- Container para promoções novas -->
         <div class="titles-body">NOVIDADES</div>
         <div class="container-flex">
-            <div class="new-item" th:each="produto : ${produtos}">
-                <div class="discount" th:text="${produto.desconto+'% off'}"></div>
+            <div class="new-item" th:each="produto : ${produtosNovidades}">
+                <div class="discount" th:text="${produto.desconto} % 1 != 0 ? ${produto.desconto}+'% off' : ${#numbers.formatInteger(produto.desconto, 0)}+'% off'"></div>
                 <img th:src="${'/produtos/imagem/'+produto.id}">
                 <div th:text="${produto.nome}" class="container-nome"></div>
                 <div class="price">
-                    <span class="price-outdated" th:text="${'R$ '+produto.precoAtual}"></span>
+                    <span class="price-outdated" th:text="${'R$ '+#numbers.formatDecimal(produto.precoAtual, 0, 2)}"></span>
                     <span class="price-sign">R$</span>
-                    <span class="price-value" th:text="${produto.precoAtual*(1-(produto.desconto / 100))}">149,99</span>
+                    <span class="price-value" th:text="${#numbers.formatDecimal(produto.precoAtual*(1-(produto.desconto / 100)), 0, 2)}">149,99</span>
+                </div>
+                <button th:if="${session.tipo != 'cliente'}" class="coupon-button"><a href="/clientes">Quero meu cupom</a></button>
+                <button th:id="${'couponN'+produto.id}" th:if="${session.tipo == 'cliente'}" class="coupon-button" th:onclick="document.getElementById('couponN'+[[${produto.id}]]).innerHTML = [[${produto.nomeCupom}]]" th:text="${'Mostrar cupom'}">Mostrar cupom</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="titles-body">TODOS OS PRODUTOS</div>
+        <div class="container-flex">
+            <div class="new-item" th:each="produto : ${produtos}">
+                <div class="discount" th:text="${produto.desconto} % 1 != 0 ? ${produto.desconto}+'% off' : ${#numbers.formatInteger(produto.desconto, 0)}+'% off'"></div>
+                <img th:src="${'/produtos/imagem/'+produto.id}">
+                <div th:text="${produto.nome}" class="container-nome"></div>
+                <div class="price">
+                    <span class="price-outdated" th:text="${'R$ '+#numbers.formatDecimal(produto.precoAtual, 0, 2)}"></span>
+                    <span class="price-sign">R$</span>
+                    <span class="price-value" th:text="${#numbers.formatDecimal(produto.precoAtual*(1-(produto.desconto / 100)), 0, 2)}">149,99</span>
                 </div>
                 <button th:if="${session.tipo != 'cliente'}" class="coupon-button"><a href="/clientes">Quero meu cupom</a></button>
                 <button th:id="${'coupon'+produto.id}" th:if="${session.tipo == 'cliente'}" class="coupon-button" th:onclick="document.getElementById('coupon'+[[${produto.id}]]).innerHTML = [[${produto.nomeCupom}]]" th:text="${'Mostrar cupom'}">Mostrar cupom</button>
